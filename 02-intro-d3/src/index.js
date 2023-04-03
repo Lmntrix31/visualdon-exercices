@@ -1,4 +1,4 @@
-import { select, selection } from "d3-selection";
+import { select, selectAll, selection } from "d3-selection";
 
 const monsvg = select("body")
   .append("svg")
@@ -8,7 +8,10 @@ const monsvg = select("body")
   .attr("cx", 50)
   .attr("cy", 50)
   .attr("r", 40)
-  .attr("fill", "red");
+  .attr("fill", "red")
+  .append("text")
+  .text("je suis le cercle rouge");
+
 select("svg")
   .append("circle")
   .attr("cx", 150)
@@ -37,14 +40,6 @@ select("svg")
   })
   .attr("cx", 100);
 
-select("svg")
-  .selectAll("circle")
-  .append("text")
-  .text("coucou")
-  .attr("x", 0)
-  .attr("y", 0)
-  .attr("fill", "black");
+//rajouter un text sous le cercle bleu avec le texte "je suis le cercle bleu"
 
 console.log(monsvg);
-
-// rajouter du texte en dessous de chaque cercle
